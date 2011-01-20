@@ -1,3 +1,20 @@
+""" Encoding
+set history=1000            " Keep a very long command-line history.
+set encoding=utf-8
+set showmode
+set showcmd
+set hidden
+set wildmenu
+set wildmode=full
+set ttyfast
+set modeline                " Allow vim options to be embedded in files;
+set modelines=5             " they must be within the first or last 5 lines.
+set ffs=unix,dos,mac        " Try recognizing dos, unix, and mac line endings.
+
+""" Filetypes
+filetype plugin on
+filetype plugin indent on
+
 set title
 set t_Co=256
 set history=1000
@@ -10,6 +27,12 @@ set hidden
 set ignorecase
 set smartcase
 set scrolloff=3
+set backspace=2
+set incsearch
+set showmatch
+set matchtime=2
+set textwidth=79
+set formatoptions=qrn1
 
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
@@ -29,8 +52,6 @@ autocmd BufRead *.py set tabstop=4
 autocmd BufRead *.py set nowrap
 autocmd BufRead *.py set go+=b
 
-filetype plugin indent on
-filetype plugin on
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
 let g:pydiction_location = '/home/zr/.vim/after/ftplugin/pydiction/complete-dict'
@@ -56,7 +77,20 @@ return 1
 endif
 endfunction
 
+""" Disable Help key
+inoremap <F1> <ESC>
+nnoremap <F1> <ESC>
+vnoremap <F1> <ESC>
+
 augroup resCur
 autocmd!
 autocmd BufWinEnter * call ResCur()
 augroup END
+
+" When editing a file, always jump to the last cursor position
+autocmd BufReadPost *
+      \ if ! exists("g:leave_my_cursor_position_alone") |
+      \     if line("'\"") > 0 && line ("'\"") <= line("$") |
+      \         exe "normal g'\"" |
+      \     endif |
+      \ endif
