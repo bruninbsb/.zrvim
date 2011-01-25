@@ -113,7 +113,7 @@
 
 " Set defaults, but keep any parameters already set by the user
 if ! exists("g:zenburn_high_Contrast")
-    let g:zenburn_high_Contrast = 0
+    let g:zenburn_high_Contrast = 1
 endif
 
 if ! exists("g:zenburn_color_also_Ignore")
@@ -125,7 +125,7 @@ if ! exists("g:zenburn_alternate_Error")
 endif
 
 if ! exists("g:zenburn_force_dark_Background")
-    let g:zenburn_force_dark_Background = 0
+    let g:zenburn_force_dark_Background = 1
 endif
 
 if ! exists("g:zenburn_alternate_Visual")
