@@ -54,9 +54,11 @@ autocmd BufRead *.py set go+=b
 
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
-let g:pydiction_location = '/home/zr/.vim/after/ftplugin/pydiction/complete-dict'
+let g:pydiction_location = '$HOME/.vim/after/ftplugin/pydiction/complete-dict'
 let mapleader = ","
 nmap <silent> <F3> :NERDTreeToggle<CR>
+cmap W w
+cmap Q q
 
 " Execute file being edited with <Shift> + e:
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
