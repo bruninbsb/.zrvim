@@ -79,10 +79,18 @@ return 1
 endif
 endfunction
 
+""" Zope Stuff
+au BufNewFile,BufRead *.pt set filetype=html.pt
+au BufNewFile,BufRead *.zcml set filetype=xml.zcml
+
 """ Disable Help key
 inoremap <F1> <ESC>
 nnoremap <F1> <ESC>
 vnoremap <F1> <ESC>
+
+""" Remap
+nnoremap <F1> :set invpaste paste?<CR>
+set pastetoggle=<F2>
 
 augroup resCur
 autocmd!
