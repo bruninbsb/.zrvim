@@ -104,3 +104,9 @@ autocmd BufReadPost *
       \         exe "normal g'\"" |
       \     endif |
       \ endif
+
+""" Taken from https://dev.launchpad.net/UltimateVimPythonSetup
+if !exists("autocommands_loaded")
+  let autocommands_loaded = 1
+  autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python
+endif
