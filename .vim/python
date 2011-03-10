@@ -17,7 +17,7 @@ autocmd filetype python source ~/.vim/pydoc.vim
 set formatoptions=cq textwidth=72 foldignore= wildignore+=*.py[co]
 
 " Highlight end of line whitespace.
-highlight WhitespaceEOL ctermbg=red guibg=red
+highlight WhitespaceEOL ctermbg=black guibg=black
 match WhitespaceEOL /\s\+$/
 
 " `gf` jumps to the filename under the cursor.  Point at an import statement
