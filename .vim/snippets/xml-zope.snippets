@@ -1,15 +1,15 @@
 # Created by textmate_to_snipmate_converter.py
-# 2011-03-10 09:33:31.180609
+# 2011-03-10 10:56:15.192644
 
 # ZCML: permission
-snippet <permission
+snippet <permission ZCML: permission
 	<${1}zope:permission
 	    ${2:id="${3}"}
 	    ${4:title="${5}"}
 	    />
 
 # ZCML: page
-snippet <
+snippet < ZCML: page
 	<${1}page
 	    ${2:for="${3}"}
 	    ${4:class="${5}"}
@@ -21,13 +21,13 @@ snippet <
 	
 
 # Generic Setup: catalog index
-snippet <index
+snippet <index Generic Setup: catalog index
 	<${1}index ${2:name="${3}"} ${4:meta_type="${5}"}>
 	  <indexed_attr ${6:value="${7}"}/>
 	</index>
 
 # ZCML: GenericSetup import step
-snippet <import
+snippet <import ZCML: GenericSetup import step
 	<genericsetup:importStep
 	    name="$1"
 	    title="$2"
@@ -38,7 +38,7 @@ snippet <import
 	
 
 # ZCML: GenericSetup export step
-snippet <export
+snippet <export ZCML: GenericSetup export step
 	<genericsetup:exportStep
 	    name="$1"
 	    title="$2"
@@ -48,7 +48,7 @@ snippet <export
 	
 
 # ZCML: Include
-snippet <include
+snippet <include ZCML: Include
 	<$1include 
 	    ${2:package="${3}"}
 	    ${4:file="${5}"}
@@ -56,7 +56,7 @@ snippet <include
 	
 
 # ZCML: GenericSetup upgrade step
-snippet <upgrade
+snippet <upgrade ZCML: GenericSetup upgrade step
 	<genericsetup:upgradeStep
 	    title="$1"
 	    description="$2"
@@ -69,7 +69,7 @@ snippet <upgrade
 	
 
 # ZCML: Viewlet
-snippet <viewlet
+snippet <viewlet ZCML: Viewlet
 	<${1}viewlet
 	    ${2:name="${3}"}
 	    ${4:for="${5}"}
@@ -80,7 +80,7 @@ snippet <viewlet
 	    />
 
 # ZCML: GenericSetup upgrade step group
-snippet <upgradeg
+snippet <upgradeg ZCML: GenericSetup upgrade step group
 	<genericsetup:upgradeSteps
 	    source="$1"
 	    destination="$2"
@@ -95,7 +95,7 @@ snippet <upgradeg
 	
 
 # ZCML: configure
-snippet <configure
+snippet <configure ZCML: configure
 	<configure
 	    xmlns:${1:zope}="http://namespaces.zope.org/zope"
 	    xmlns:${2:browser}="http://namespaces.zope.org/browser">
@@ -104,7 +104,7 @@ snippet <configure
 	
 
 # ZCML: Interface
-snippet <interface
+snippet <interface ZCML: Interface
 	<${1}interface
 	    ${2:interface="${3}"}
 	    ${4:type="${5}"}
@@ -112,7 +112,7 @@ snippet <interface
 	    />
 
 # ZCML: Adapter
-snippet <adapter
+snippet <adapter ZCML: Adapter
 	<${1}adapter
 	    ${2:factory = "${3}"}
 	    ${4:for = "${5}"}
@@ -124,7 +124,7 @@ snippet <adapter
 	    />
 
 # Generic Setup: directory view
-snippet <object
+snippet <object Generic Setup: directory view
 	<${1}object
 	  name="${2}"
 	  meta_type="Filesystem Directory View"
@@ -132,30 +132,30 @@ snippet <object
 	
 
 # ZCML: Implements
-snippet <implements
+snippet <implements ZCML: Implements
 	<$1implements interface="$2"/>
 
 # ZCML: grant
-snippet <grant
+snippet <grant ZCML: grant
 	<${1}zope:grant
 	    ${2:permission="${3}"}
 	    ${4:role="${5}"}
 	    />
 
 # Generic Setup: permission
-snippet <permission
+snippet <permission Generic Setup: permission
 	<${1}permission ${2:name="${3}"} ${4:acquire="${5}"}>
 	  <role ${6:name="${7}"}/>
 	</permission>
 
 # Generic Setup: skin path
-snippet <skin-path
+snippet <skin-path Generic Setup: skin path
 	<${1}skin-path name="${2:Plone Default}">
 	  ${3}
 	</skin-path>
 
 # ZCML: factory
-snippet <
+snippet < ZCML: factory
 	<${1}factory
 	    component="${2}"
 	    ${3:description="${4}"}
@@ -165,7 +165,7 @@ snippet <
 	
 
 # ZCML: Class
-snippet <class
+snippet <class ZCML: Class
 	<${1}class class="${2}">
 	  ${3:<${4}allow
 	      ${5:attributes="${6}"}
@@ -180,7 +180,7 @@ snippet <class
 	</class>
 
 # ZCML: Utility
-snippet <utility
+snippet <utility ZCML: Utility
 	<${1}utility
 	    ${2:component="${3}"}
 	    ${4:factory="${5}"}
@@ -190,12 +190,12 @@ snippet <utility
 	    />
 
 # Generic Setup: skin layer
-snippet <layer
+snippet <layer Generic Setup: skin layer
 	<${1}layer name="${2}" ${3:insert-after="${4:custom}"}/>
 	
 
 # ZCML: AddMenuItem
-snippet <addMenuItem
+snippet <addMenuItem ZCML: AddMenuItem
 	<${1}addMenuItem
 	    ${2:title="${3}"}
 	    ${4:description="${5}"}
@@ -212,18 +212,18 @@ snippet <addMenuItem
 	    />
 
 # Generic Setup: role
-snippet <role
+snippet <role Generic Setup: role
 	<${1}role ${2:name="${3}"}/>
 
 # ZCML: role
-snippet <role
+snippet <role ZCML: role
 	<${1}zope:role
 	    ${2:id="${3}"}
 	    ${4:title="${5}"}
 	    />
 
 # ZCML: Require
-snippet <require
+snippet <require ZCML: Require
 	${1:<${2}require
 	    ${3:attributes="${4}"}
 	    ${5:interface="${6}"}
@@ -234,11 +234,11 @@ snippet <require
 	    />}
 
 # Generic Setup: catalog column
-snippet <col
+snippet <col Generic Setup: catalog column
 	<${1}column ${2:value="${3}"}/>
 
 # Generic Setup: folderish type
-snippet <ftype
+snippet <ftype Generic Setup: folderish type
 	<?xml version="1.0"?>
 	<object name="${1}"
 	  meta_type="Factory-based Type Information with dynamic views"
