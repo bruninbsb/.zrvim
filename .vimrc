@@ -82,6 +82,7 @@ endfunction
 """ Zope Stuff
 au BufNewFile,BufRead *.pt set filetype=html.pt
 au BufNewFile,BufRead *.zcml set filetype=xml.zcml
+au BufNewFile,BufRead *.conf set filetype=xml.conf
 
 """ Disable Help key
 inoremap <F1> <ESC>
