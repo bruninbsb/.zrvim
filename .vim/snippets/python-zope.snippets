@@ -217,6 +217,14 @@ snippet atf FieldsInteger
 	    ),
 	),
 
+# Python: coding: utf-8
+snippet utf8 Python: coding: utf-8
+	# -*- coding: utf-8 -*-$0
+
+# Python: set_trace
+snippet pdb Python: set_trace
+	import pdb; pdb.set_trace()
+
 # Bool
 snippet schema Bool
 	schema.Bool(
@@ -344,6 +352,13 @@ snippet schema Container
 # Password
 snippet schema Password
 	schema.Password(
+# Python: ipdb set_trace
+snippet ipdb Python: ipdb set_trace
+	import ipdb; ipdb.set_trace()
+
+# Schema: TextLine
+snippet schema Schema: TextLine
+	schema.TextLine(
 	    __name__ = '$1',
 	    ${2:title = ${3:u'$4'},}
 	    ${5:description = ${6:u'$7'},}

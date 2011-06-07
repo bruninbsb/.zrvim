@@ -1,3 +1,7 @@
+""" No vi
+set nocompatible
+set ttyfast
+
 """ Encoding
 set history=1000            " Keep a very long command-line history.
 set encoding=utf-8
@@ -33,6 +37,21 @@ set showmatch
 set matchtime=2
 set textwidth=79
 set formatoptions=qrn1
+if has("mouse")
+    set mouse=a
+endif
+
+if has("gui_running")
+    set guioptions-=m       " remove menu bar
+    set guioptions-=T       " remove toolbar
+    set guioptions-=r       " remove right-hand scroll bar
+    set t_Co=256
+endif
+
+" show a line at column 79
+if exists("&colorcolumn")
+    set colorcolumn=79
+endif
 
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
@@ -82,6 +101,7 @@ endfunction
 """ Zope Stuff
 au BufNewFile,BufRead *.pt set filetype=html.pt
 au BufNewFile,BufRead *.zcml set filetype=xml.zcml
+au BufNewFile,BufRead *.conf set filetype=xml.conf
 
 """ Disable Help key
 inoremap <F1> <ESC>
