@@ -37,9 +37,9 @@ set showmatch
 set matchtime=2
 set textwidth=79
 set formatoptions=qrn1
-if has("mouse")
-    set mouse=a
-endif
+"if has("mouse")
+"    set mouse=a
+"endif
 
 if has("gui_running")
     set guioptions-=m       " remove menu bar

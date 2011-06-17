@@ -10,6 +10,7 @@ snippet docs
 	Author: ${2:`g:snips_author`}
 	Description: ${3}
 	'''
+# bpython debugger
 snippet bpy
 	import bpython; bpython.embed(locals_=locals())
 snippet wh
@@ -86,3 +87,20 @@ snippet ifmain
 # __magic__
 snippet _
 	__${1:init}__${2}
+# Testing framework
+snippet testing
+	import unittest
+
+	class Test${1:ClassName}(unittest.TestCase):
+
+		def setUp(self):
+			self.foo = 'bar'
+
+		def test_sample1(self):
+			self.assertTrue(True)
+
+		def tearDown(self):
+			del(self.foo)
+
+	if __name__ == '__main__':
+		unittest.main()
