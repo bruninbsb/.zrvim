@@ -90,6 +90,7 @@ snippet _
 	__${1:init}__${2}
 # Testing framework
 snippet testing
+	import sys
 	import unittest
 
 	class Test${1:ClassName}(unittest.TestCase):
@@ -104,7 +105,7 @@ snippet testing
 			del(self.foo)
 
 	def main():
-		unittest.main()
+		unittest.main(sys.modules[__name__])
 
 	if __name__ == '__main__':
 		main()
