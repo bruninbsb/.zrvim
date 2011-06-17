@@ -1,9 +1,9 @@
-# Created by textmate_to_snipmate_converter.py
-# 2011-03-10 13:43:04.751842
+# python-zope snippets for snipMate.
+# Created by tm2snip.py @ 2011-03-10 23:55:56.847948
 
-# Schema: Date
-snippet schema Schema: Date
-	schema.Date(
+# BytesLine
+snippet schema BytesLine
+	schema.BytesLine(
 	    __name__ = '$1',
 	    ${2:title = ${3:u'$4'},}
 	    ${5:description = ${6:u'$7'},}
@@ -21,9 +21,9 @@ snippet schema Schema: Date
 	    ${30:unique = ${31:False}}
 	)
 
-# Schema: DottedName
-snippet schema Schema: DottedName
-	schema.DottedName(
+# Object
+snippet schema Object
+	schema.Object(
 	    __name__ = '$1',
 	    ${2:title = ${3:u'$4'},}
 	    ${5:description = ${6:u'$7'},}
@@ -41,189 +41,8 @@ snippet schema Schema: DottedName
 	    ${30:unique = ${31:False}}
 	)
 
-# Schema: Datetime
-snippet schema Schema: Datetime
-	schema.Datetime(
-	    __name__ = '$1',
-	    ${2:title = ${3:u'$4'},}
-	    ${5:description = ${6:u'$7'},}
-	    ${8:required = ${9:True},}
-	    ${10:readonly = ${11:False},}
-	    ${12:default = ${13:None},}
-	    ${14:missing_value = ${15:None},}
-	    ${16:order = ${17:0},}
-	    ${18:constraint = ${19:my_constraint_callable},}
-	    ${20:min = ${21:0},}
-	    ${22:max = ${23:1},}
-	    ${24:min_length = ${25:0},}
-	    ${26:max_length = ${27:0},}
-	    ${28:value_type = ${29:None},}
-	    ${30:unique = ${31:False}}
-	)
-
-# AT Fields Reference
-snippet atf AT Fields Reference
-	atapi.ReferenceField(
-	    '$1',
-	    allowed_types=('$2'),
-	    storage=atapi.AnnotationStorage(),
-	    widget=atapi.ReferenceWidget(
-	        label=_(u"$3"),
-	        description=_(u"$4")
-	    ),
-	),
-
-# Schema: Iterable
-snippet schema Schema: Iterable
-	schema.Iterable(
-	    __name__ = '$1',
-	    ${2:title = ${3:u'$4'},}
-	    ${5:description = ${6:u'$7'},}
-	    ${8:required = ${9:True},}
-	    ${10:readonly = ${11:False},}
-	    ${12:default = ${13:None},}
-	    ${14:missing_value = ${15:None},}
-	    ${16:order = ${17:0},}
-	    ${18:constraint = ${19:my_constraint_callable},}
-	    ${20:min = ${21:0},}
-	    ${22:max = ${23:1},}
-	    ${24:min_length = ${25:0},}
-	    ${26:max_length = ${27:0},}
-	    ${28:value_type = ${29:None},}
-	    ${30:unique = ${31:False}}
-	)
-
-# AT Fields File
-snippet atf AT Fields File
-	atapi.FileField(
-	    '$1',
-	    required=${2:False},
-	    storage=atapi.AnnotationStorage(),
-	    widget=atapi.FileWidget(
-	        label=_(u"$3")
-	        description=_(u"$4")
-	    ),
-	),
-
-# Python: Adapts
-snippet ada Python: Adapts
-	adapts($1)
-
-# Schema: Id
-snippet schema Schema: Id
-	schema.Id(
-	    __name__ = '$1',
-	    ${2:title = ${3:u'$4'},}
-	    ${5:description = ${6:u'$7'},}
-	    ${8:required = ${9:True},}
-	    ${10:readonly = ${11:False},}
-	    ${12:default = ${13:None},}
-	    ${14:missing_value = ${15:None},}
-	    ${16:order = ${17:0},}
-	    ${18:constraint = ${19:my_constraint_callable},}
-	    ${20:min = ${21:0},}
-	    ${22:max = ${23:1},}
-	    ${24:min_length = ${25:0},}
-	    ${26:max_length = ${27:0},}
-	    ${28:value_type = ${29:None},}
-	    ${30:unique = ${31:False}}
-	)
-
-# AT Fields RichText
-snippet atf AT Fields RichText
-	atapi.TextField(
-	    '$1',
-	    required=${2:False},
-	    searchable=${3:True},
-	    primary=${4:True},
-	    default_output_type='text/x-html-safe',
-	    storage=atapi.AnnotationStorage(),
-	    widget=atapi.RichWidget(
-	        label=_(u"$5"),
-	        description=_(u"$6")
-	    ),
-	),
-
-# Schema: Choice
-snippet schema Schema: Choice
-	schema.Choice(
-	    __name__ = '$1',
-	    ${2:title = ${3:u'$4'},}
-	    ${5:description = ${6:u'$7'},}
-	    ${8:required = ${9:True},}
-	    ${10:readonly = ${11:False},}
-	    ${12:default = ${13:None},}
-	    ${14:missing_value = ${15:None},}
-	    ${16:order = ${17:0},}
-	    ${18:constraint = ${19:my_constraint_callable},}
-	    ${20:min = ${21:0},}
-	    ${22:max = ${23:1},}
-	    ${24:min_length = ${25:0},}
-	    ${26:max_length = ${27:0},}
-	    ${28:value_type = ${29:None},}
-	    ${30:unique = ${31:False}}
-	)
-
-# Python: coding: utf-8
-snippet utf8 Python: coding: utf-8
-	# -*- coding: utf-8 -*-$0
-
-# Python: set_trace
-snippet pdb Python: set_trace
-	import pdb; pdb.set_trace()
-
-# Schema: Container
-snippet schema Schema: Container
-	schema.Container(
-	    __name__ = '$1',
-	    ${2:title = ${3:u'$4'},}
-	    ${5:description = ${6:u'$7'},}
-	    ${8:required = ${9:True},}
-	    ${10:readonly = ${11:False},}
-	    ${12:default = ${13:None},}
-	    ${14:missing_value = ${15:None},}
-	    ${16:order = ${17:0},}
-	    ${18:constraint = ${19:my_constraint_callable},}
-	    ${20:min = ${21:0},}
-	    ${22:max = ${23:1},}
-	    ${24:min_length = ${25:0},}
-	    ${26:max_length = ${27:0},}
-	    ${28:value_type = ${29:None},}
-	    ${30:unique = ${31:False}}
-	)
-
-# ZCML: register GenericSetup profile
-snippet registerProfile ZCML: register GenericSetup profile
-	<genericsetup:registerProfile
-	    name="$1"
-	    title="$2"
-	    directory="profiles/$1"
-	    description="$3"
-	    provides="Products.GenericSetup.interfaces.EXTENSION"
-	    />
-
-# Schema: Password
-snippet schema Schema: Password
-	schema.Password(
-	    __name__ = '$1',
-	    ${2:title = ${3:u'$4'},}
-	    ${5:description = ${6:u'$7'},}
-	    ${8:required = ${9:True},}
-	    ${10:readonly = ${11:False},}
-	    ${12:default = ${13:None},}
-	    ${14:missing_value = ${15:None},}
-	    ${16:order = ${17:0},}
-	    ${18:constraint = ${19:my_constraint_callable},}
-	    ${20:min = ${21:0},}
-	    ${22:max = ${23:1},}
-	    ${24:min_length = ${25:0},}
-	    ${26:max_length = ${27:0},}
-	    ${28:value_type = ${29:None},}
-	    ${30:unique = ${31:False}}
-	)
-
-# AT Fields Computed
-snippet atf AT Fields Computed
+# FieldsComputed
+snippet atf FieldsComputed
 	atapi.ComputedField(
 	    '$1',
 	    expression = '',
@@ -234,82 +53,20 @@ snippet atf AT Fields Computed
 	    ),
 	),
 
-# Python: Adapter
-snippet @ada Python: Adapter
-	@adapter($1)
-
-# Schema: Dict
-snippet schema Schema: Dict
-	schema.Dict(
-	    __name__ = '$1',
-	    ${2:title = ${3:u'$4'},}
-	    ${5:description = ${6:u'$7'},}
-	    ${8:required = ${9:True},}
-	    ${10:readonly = ${11:False},}
-	    ${12:default = ${13:None},}
-	    ${14:missing_value = ${15:None},}
-	    ${16:order = ${17:0},}
-	    ${18:constraint = ${19:my_constraint_callable},}
-	    ${20:min = ${21:0},}
-	    ${22:max = ${23:1},}
-	    ${24:min_length = ${25:0},}
-	    ${26:max_length = ${27:0},}
-	    ${28:value_type = ${29:None},}
-	    ${30:unique = ${31:False}}
-	)
-
-# AT Fields Lines
-snippet atf AT Fields Lines
-	atapi.LinesField(
+# FieldsReference
+snippet atf FieldsReference
+	atapi.ReferenceField(
 	    '$1',
-	    required=${2:False},
+	    allowed_types=('$2'),
 	    storage=atapi.AnnotationStorage(),
-	    widget=atapi.LinesWidget(
+	    widget=atapi.ReferenceWidget(
 	        label=_(u"$3"),
 	        description=_(u"$4")
 	    ),
 	),
 
-# AT Fields Boolean
-snippet atf AT Fields Boolean
-	atapi.BooleanField(
-	    '$1',
-	    required=${2:False},
-	    storage=atapi.AnnotationStorage(),
-	    widget=atapi.BooleanWidget(
-	        label=_(u"$3"),
-	        description=_(u"$4")
-	    ),
-	),
-
-# Python: Action
-snippet @act Python: Action
-	@action('$1'${2:,validator=$3})
-	def ${4:action_method}(${5:self,} action, data):
-	     ${6:pass}
-
-# Schema: Text
-snippet schema Schema: Text
-	schema.Text(
-	    __name__ = '$1',
-	    ${2:title = ${3:u'$4'},}
-	    ${5:description = ${6:u'$7'},}
-	    ${8:required = ${9:True},}
-	    ${10:readonly = ${11:False},}
-	    ${12:default = ${13:None},}
-	    ${14:missing_value = ${15:None},}
-	    ${16:order = ${17:0},}
-	    ${18:constraint = ${19:my_constraint_callable},}
-	    ${20:min = ${21:0},}
-	    ${22:max = ${23:1},}
-	    ${24:min_length = ${25:0},}
-	    ${26:max_length = ${27:0},}
-	    ${28:value_type = ${29:None},}
-	    ${30:unique = ${31:False}}
-	)
-
-# Schema: Float
-snippet schema Schema: Float
+# Float
+snippet schema Float
 	schema.Float(
 	    __name__ = '$1',
 	    ${2:title = ${3:u'$4'},}
@@ -328,6 +85,273 @@ snippet schema Schema: Float
 	    ${30:unique = ${31:False}}
 	)
 
+# Tuple
+snippet schema Tuple
+	schema.Tuple(
+	    __name__ = '$1',
+	    ${2:title = ${3:u'$4'},}
+	    ${5:description = ${6:u'$7'},}
+	    ${8:required = ${9:True},}
+	    ${10:readonly = ${11:False},}
+	    ${12:default = ${13:None},}
+	    ${14:missing_value = ${15:None},}
+	    ${16:order = ${17:0},}
+	    ${18:constraint = ${19:my_constraint_callable},}
+	    ${20:min = ${21:0},}
+	    ${22:max = ${23:1},}
+	    ${24:min_length = ${25:0},}
+	    ${26:max_length = ${27:0},}
+	    ${28:value_type = ${29:None},}
+	    ${30:unique = ${31:False}}
+	)
+
+# FieldsBoolean
+snippet atf FieldsBoolean
+	atapi.BooleanField(
+	    '$1',
+	    required=${2:False},
+	    storage=atapi.AnnotationStorage(),
+	    widget=atapi.BooleanWidget(
+	        label=_(u"$3"),
+	        description=_(u"$4")
+	    ),
+	),
+
+# URI
+snippet schema URI
+	URI(__name__ = '$1',
+	         ${2:title = ${3:u'$4'},}
+	         ${5:description = ${6:u'$7'},}
+	         ${8:required = ${9:True},}
+	         ${10:readonly = ${11:False},}
+			${12:default = ${13:None},}
+			${14:missing_value = ${15:None},}
+			${16:order = ${17:0},}
+			${18:constraint = ${19:my_constraint_callable},}
+			${20:min = ${21:0},}
+			${22:max = ${23:1},}
+			${24:min_length = ${25:0},}
+			${26:max_length = ${27:0},}
+			${28:value_type = ${29:None},}
+			${30:unique = ${31:False}}
+	)
+
+# Text
+snippet schema Text
+	schema.Text(
+	    __name__ = '$1',
+	    ${2:title = ${3:u'$4'},}
+	    ${5:description = ${6:u'$7'},}
+	    ${8:required = ${9:True},}
+	    ${10:readonly = ${11:False},}
+	    ${12:default = ${13:None},}
+	    ${14:missing_value = ${15:None},}
+	    ${16:order = ${17:0},}
+	    ${18:constraint = ${19:my_constraint_callable},}
+	    ${20:min = ${21:0},}
+	    ${22:max = ${23:1},}
+	    ${24:min_length = ${25:0},}
+	    ${26:max_length = ${27:0},}
+	    ${28:value_type = ${29:None},}
+	    ${30:unique = ${31:False}}
+	)
+
+# coding:utf-8
+snippet utf8 coding:utf-8
+	# -*- coding: utf-8 -*-$0
+
+# FieldsString
+snippet atf FieldsString
+	atapi.StringField(
+	    '$1',
+	    required=${2:False},
+	    searchable=${3:True},
+	    storage=atapi.AnnotationStorage(),
+	    widget=${4:atapi.StringWidget}(
+	        label=_(u"$5"),
+	        description=_(u"$6")
+	     ),
+	),
+
+# FieldsImage
+snippet atf FieldsImage
+	atapi.ImageField(
+	    '$1',
+	    required=${2:False},
+	    storage=atapi.AnnotationStorage(),
+	    widget=atapi.ImageWidget(
+	        label=_(u"$3"),
+	        description=_(u"$4")
+	    ),
+	),
+
+# List
+snippet schema List
+	schema.List(
+	    __name__ = '$1',
+	    ${2:title = ${3:u'$4'},}
+	    ${5:description = ${6:u'$7'},}
+	    ${8:required = ${9:True},}
+	    ${10:readonly = ${11:False},}
+	    ${12:default = ${13:None},}
+	    ${14:missing_value = ${15:None},}
+	    ${16:order = ${17:0},}
+	    ${18:constraint = ${19:my_constraint_callable},}
+	    ${20:min = ${21:0},}
+	    ${22:max = ${23:1},}
+	    ${24:min_length = ${25:0},}
+	    ${26:max_length = ${27:0},}
+	    ${28:value_type = ${29:None},}
+	    ${30:unique = ${31:False}}
+	)
+
+# FieldsInteger
+snippet atf FieldsInteger
+	atapi.IntegerField(
+	    '$1',
+	    required=${2:False},
+	    storage=atapi.AnnotationStorage(),
+	    widget=atapi.IntegerWidget(
+	        label=_(u"$3"),
+	        description=_(u"$4")
+	    ),
+	),
+
+# Python: coding: utf-8
+snippet utf8 Python: coding: utf-8
+	# -*- coding: utf-8 -*-$0
+
+# Python: set_trace
+snippet pdb Python: set_trace
+	import pdb; pdb.set_trace()
+
+# Bool
+snippet schema Bool
+	schema.Bool(
+	    __name__ = '$1',
+	    ${2:title = ${3:u'$4'},}
+	    ${5:description = ${6:u'$7'},}
+	    ${8:required = ${9:True},}
+	    ${10:readonly = ${11:False},}
+	    ${12:default = ${13:None},}
+	    ${14:missing_value = ${15:None},}
+	    ${16:order = ${17:0},}
+	    ${18:constraint = ${19:my_constraint_callable},}
+	    ${20:min = ${21:0},}
+	    ${22:max = ${23:1},}
+	    ${24:min_length = ${25:0},}
+	    ${26:max_length = ${27:0},}
+	    ${28:value_type = ${29:None},}
+	    ${30:unique = ${31:False}}
+	)
+
+# SourceText
+snippet schema SourceText
+	schema.SourceText(
+	    __name__ = '$1',
+	    ${2:title = ${3:u'$4'},}
+	    ${5:description = ${6:u'$7'},}
+	    ${8:required = ${9:True},}
+	    ${10:readonly = ${11:False},}
+	    ${12:default = ${13:None},}
+	    ${14:missing_value = ${15:None},}
+	    ${16:order = ${17:0},}
+	    ${18:constraint = ${19:my_constraint_callable},}
+	    ${20:min = ${21:0},}
+	    ${22:max = ${23:1},}
+	    ${24:min_length = ${25:0},}
+	    ${26:max_length = ${27:0},}
+	    ${28:value_type = ${29:None},}
+	    ${30:unique = ${31:False}}
+	)
+
+# FieldsFloat
+snippet atf FieldsFloat
+	atapi.FloatField(
+	    '$1',
+	    required=${2:False},
+	    storage=atapi.AnnotationStorage(),
+	    widget=atapi.DecimalWidget(
+	        label=_(u"$3"),
+	        description=_(u"$4")
+	    ),
+	),
+
+# FieldsFile
+snippet atf FieldsFile
+	atapi.FileField(
+	    '$1',
+	    required=${2:False},
+	    storage=atapi.AnnotationStorage(),
+	    widget=atapi.FileWidget(
+	        label=_(u"$3")
+	        description=_(u"$4")
+	    ),
+	),
+
+# Bytes
+snippet schema Bytes
+	schema.Bytes(
+	    __name__ = '$1',
+	    ${2:title = ${3:u'$4'},}
+	    ${5:description = ${6:u'$7'},}
+	    ${8:required = ${9:True},}
+	    ${10:readonly = ${11:False},}
+	    ${12:default = ${13:None},}
+	    ${14:missing_value = ${15:None},}
+	    ${16:order = ${17:0},}
+	    ${18:constraint = ${19:my_constraint_callable},}
+	    ${20:min = ${21:0},}
+	    ${22:max = ${23:1},}
+	    ${24:min_length = ${25:0},}
+	    ${26:max_length = ${27:0},}
+	    ${28:value_type = ${29:None},}
+	    ${30:unique = ${31:False}}
+	)
+
+# Choice
+snippet schema Choice
+	schema.Choice(
+	    __name__ = '$1',
+	    ${2:title = ${3:u'$4'},}
+	    ${5:description = ${6:u'$7'},}
+	    ${8:required = ${9:True},}
+	    ${10:readonly = ${11:False},}
+	    ${12:default = ${13:None},}
+	    ${14:missing_value = ${15:None},}
+	    ${16:order = ${17:0},}
+	    ${18:constraint = ${19:my_constraint_callable},}
+	    ${20:min = ${21:0},}
+	    ${22:max = ${23:1},}
+	    ${24:min_length = ${25:0},}
+	    ${26:max_length = ${27:0},}
+	    ${28:value_type = ${29:None},}
+	    ${30:unique = ${31:False}}
+	)
+
+# Container
+snippet schema Container
+	schema.Container(
+	    __name__ = '$1',
+	    ${2:title = ${3:u'$4'},}
+	    ${5:description = ${6:u'$7'},}
+	    ${8:required = ${9:True},}
+	    ${10:readonly = ${11:False},}
+	    ${12:default = ${13:None},}
+	    ${14:missing_value = ${15:None},}
+	    ${16:order = ${17:0},}
+	    ${18:constraint = ${19:my_constraint_callable},}
+	    ${20:min = ${21:0},}
+	    ${22:max = ${23:1},}
+	    ${24:min_length = ${25:0},}
+	    ${26:max_length = ${27:0},}
+	    ${28:value_type = ${29:None},}
+	    ${30:unique = ${31:False}}
+	)
+
+# Password
+snippet schema Password
+	schema.Password(
 # Python: ipdb set_trace
 snippet ipdb Python: ipdb set_trace
 	import ipdb; ipdb.set_trace()
@@ -352,22 +376,9 @@ snippet schema Schema: TextLine
 	    ${30:unique = ${31:False}}
 	)
 
-# AT Fields String
-snippet atf AT Fields String
-	atapi.StringField(
-	    '$1',
-	    required=${2:False},
-	    searchable=${3:True},
-	    storage=atapi.AnnotationStorage(),
-	    widget=${4:atapi.StringWidget}(
-	        label=_(u"$5"),
-	        description=_(u"$6")
-	     ),
-	),
-
-# Schema: Object
-snippet schema Schema: Object
-	schema.Object(
+# Dict
+snippet schema Dict
+	schema.Dict(
 	    __name__ = '$1',
 	    ${2:title = ${3:u'$4'},}
 	    ${5:description = ${6:u'$7'},}
@@ -385,27 +396,23 @@ snippet schema Schema: Object
 	    ${30:unique = ${31:False}}
 	)
 
-# AT Fields Float
-snippet atf AT Fields Float
-	atapi.FloatField(
-	    '$1',
-	    required=${2:False},
-	    storage=atapi.AnnotationStorage(),
-	    widget=atapi.DecimalWidget(
-	        label=_(u"$3"),
-	        description=_(u"$4")
-	    ),
-	),
-
-# Python: Invariant
-snippet @inv Python: Invariant
+# Invariant
+snippet @inv Invariant
 	@invariant
 	def ${1:method}(${2:object}):
 		${3}
 
-# Schema: SourceText
-snippet schema Schema: SourceText
-	schema.SourceText(
+# Adapter
+snippet @ada Adapter
+	@adapter($1)
+
+# set_trace
+snippet pdb set_trace
+	import pdb; pdb.set_trace( )$0
+
+# Datetime
+snippet schema Datetime
+	schema.Datetime(
 	    __name__ = '$1',
 	    ${2:title = ${3:u'$4'},}
 	    ${5:description = ${6:u'$7'},}
@@ -423,205 +430,8 @@ snippet schema Schema: SourceText
 	    ${30:unique = ${31:False}}
 	)
 
-# Schema: Set
-snippet schema Schema: Set
-	schema.Set(
-	    __name__ = '$1',
-	    ${2:title = ${3:u'$4'},}
-	    ${5:description = ${6:u'$7'},}
-	    ${8:required = ${9:True},}
-	    ${10:readonly = ${11:False},}
-	    ${12:default = ${13:None},}
-	    ${14:missing_value = ${15:None},}
-	    ${16:order = ${17:0},}
-	    ${18:constraint = ${19:my_constraint_callable},}
-	    ${20:min = ${21:0},}
-	    ${22:max = ${23:1},}
-	    ${24:min_length = ${25:0},}
-	    ${26:max_length = ${27:0},}
-	    ${28:value_type = ${29:None},}
-	    ${30:unique = ${31:False}}
-	)
-
-# AT Fields DateTime
-snippet atf AT Fields DateTime
-	atapi.DateTimeField(
-	    '$1',
-	    required=${2:False},
-	    searchable=${3:False},
-	    default_method=DateTime,
-	    languageIndependent=True,
-	    storage=atapi.AnnotationStorage(),
-	    widget=atapi.CalendarWidget(
-	        label=_(u"$4"),
-	        description=_(u"$5")
-	    ),
-	),
-
-# Python: Implements
-snippet impl Python: Implements
-	implements(${1:Interface})
-	
-
-# Python: browser.handleErrors
-snippet he Python: browser.handleErrors
-	browser.handleErrors = False
-
-# Schema: InterfaceField
-snippet schema Schema: InterfaceField
-	schema.InterfaceField(
-	    __name__ = '$1',
-	    ${2:title = ${3:u'$4'},}
-	    ${5:description = ${6:u'$7'},}
-	    ${8:required = ${9:True},}
-	    ${10:readonly = ${11:False},}
-	    ${12:default = ${13:None},}
-	    ${14:missing_value = ${15:None},}
-	    ${16:order = ${17:0},}
-	    ${18:constraint = ${19:my_constraint_callable},}
-	    ${20:min = ${21:0},}
-	    ${22:max = ${23:1},}
-	    ${24:min_length = ${25:0},}
-	    ${26:max_length = ${27:0},}
-	    ${28:value_type = ${29:None},}
-	    ${30:unique = ${31:False}}
-	)
-
-# Schema: Bool
-snippet schema Schema: Bool
-	schema.Bool(
-	    __name__ = '$1',
-	    ${2:title = ${3:u'$4'},}
-	    ${5:description = ${6:u'$7'},}
-	    ${8:required = ${9:True},}
-	    ${10:readonly = ${11:False},}
-	    ${12:default = ${13:None},}
-	    ${14:missing_value = ${15:None},}
-	    ${16:order = ${17:0},}
-	    ${18:constraint = ${19:my_constraint_callable},}
-	    ${20:min = ${21:0},}
-	    ${22:max = ${23:1},}
-	    ${24:min_length = ${25:0},}
-	    ${26:max_length = ${27:0},}
-	    ${28:value_type = ${29:None},}
-	    ${30:unique = ${31:False}}
-	)
-
-# Schema: URI
-snippet schema Schema: URI
-	URI(__name__ = '$1',
-	         ${2:title = ${3:u'$4'},}
-	         ${5:description = ${6:u'$7'},}
-	         ${8:required = ${9:True},}
-	         ${10:readonly = ${11:False},}
-			${12:default = ${13:None},}
-			${14:missing_value = ${15:None},}
-			${16:order = ${17:0},}
-			${18:constraint = ${19:my_constraint_callable},}
-			${20:min = ${21:0},}
-			${22:max = ${23:1},}
-			${24:min_length = ${25:0},}
-			${26:max_length = ${27:0},}
-			${28:value_type = ${29:None},}
-			${30:unique = ${31:False}}
-	)
-
-# AT Fields Image
-snippet atf AT Fields Image
-	atapi.ImageField(
-	    '$1',
-	    required=${2:False},
-	    storage=atapi.AnnotationStorage(),
-	    widget=atapi.ImageWidget(
-	        label=_(u"$3"),
-	        description=_(u"$4")
-	    ),
-	),
-
-# Schema: Int
-snippet schema Schema: Int
-	schema.Int(
-	    __name__ = '$1',
-	    ${2:title = ${3:u'$4'},}
-	    ${5:description = ${6:u'$7'},}
-	    ${8:required = ${9:True},}
-	    ${10:readonly = ${11:False},}
-	    ${12:default = ${13:None},}
-	    ${14:missing_value = ${15:None},}
-	    ${16:order = ${17:0},}
-	    ${18:constraint = ${19:my_constraint_callable},}
-	    ${20:min = ${21:0},}
-	    ${22:max = ${23:1},}
-	    ${24:min_length = ${25:0},}
-	    ${26:max_length = ${27:0},}
-	    ${28:value_type = ${29:None},}
-	    ${30:unique = ${31:False}}
-	)
-
-# Schema: List
-snippet schema Schema: List
-	schema.List(
-	    __name__ = '$1',
-	    ${2:title = ${3:u'$4'},}
-	    ${5:description = ${6:u'$7'},}
-	    ${8:required = ${9:True},}
-	    ${10:readonly = ${11:False},}
-	    ${12:default = ${13:None},}
-	    ${14:missing_value = ${15:None},}
-	    ${16:order = ${17:0},}
-	    ${18:constraint = ${19:my_constraint_callable},}
-	    ${20:min = ${21:0},}
-	    ${22:max = ${23:1},}
-	    ${24:min_length = ${25:0},}
-	    ${26:max_length = ${27:0},}
-	    ${28:value_type = ${29:None},}
-	    ${30:unique = ${31:False}}
-	)
-
-# Schema: Tuple
-snippet schema Schema: Tuple
-	schema.Tuple(
-	    __name__ = '$1',
-	    ${2:title = ${3:u'$4'},}
-	    ${5:description = ${6:u'$7'},}
-	    ${8:required = ${9:True},}
-	    ${10:readonly = ${11:False},}
-	    ${12:default = ${13:None},}
-	    ${14:missing_value = ${15:None},}
-	    ${16:order = ${17:0},}
-	    ${18:constraint = ${19:my_constraint_callable},}
-	    ${20:min = ${21:0},}
-	    ${22:max = ${23:1},}
-	    ${24:min_length = ${25:0},}
-	    ${26:max_length = ${27:0},}
-	    ${28:value_type = ${29:None},}
-	    ${30:unique = ${31:False}}
-	)
-
-# Schema: Fields
-snippet schema Schema: Fields
-	Fields(
-	    $1
-	)
-
-# Python: PuDB set_trace
-snippet pudb Python: PuDB set_trace
-	import pudb; pudb.set_trace()$0
-
-# AT Fields Integer
-snippet atf AT Fields Integer
-	atapi.IntegerField(
-	    '$1',
-	    required=${2:False},
-	    storage=atapi.AnnotationStorage(),
-	    widget=atapi.IntegerWidget(
-	        label=_(u"$3"),
-	        description=_(u"$4")
-	    ),
-	),
-
-# Schema: ASCII
-snippet schema Schema: ASCII
+# ASCII
+snippet schema ASCII
 	schema.ASCII(
 	    __name__ = '$1',
 	    ${2:title = ${3:u'$4'},}
@@ -640,49 +450,250 @@ snippet schema Schema: ASCII
 	    ${30:unique = ${31:False}}
 	)
 
-# Schema: Field
-snippet schema Schema: Field
+# TextLine
+snippet schema TextLine
+	schema.TextLine(
+	    __name__ = '$1',
+	    ${2:title = ${3:u'$4'},}
+	    ${5:description = ${6:u'$7'},}
+	    ${8:required = ${9:True},}
+	    ${10:readonly = ${11:False},}
+	    ${12:default = ${13:None},}
+	    ${14:missing_value = ${15:None},}
+	    ${16:order = ${17:0},}
+	    ${18:constraint = ${19:my_constraint_callable},}
+	    ${20:min = ${21:0},}
+	    ${22:max = ${23:1},}
+	    ${24:min_length = ${25:0},}
+	    ${26:max_length = ${27:0},}
+	    ${28:value_type = ${29:None},}
+	    ${30:unique = ${31:False}}
+	)
+
+# Set
+snippet schema Set
+	schema.Set(
+	    __name__ = '$1',
+	    ${2:title = ${3:u'$4'},}
+	    ${5:description = ${6:u'$7'},}
+	    ${8:required = ${9:True},}
+	    ${10:readonly = ${11:False},}
+	    ${12:default = ${13:None},}
+	    ${14:missing_value = ${15:None},}
+	    ${16:order = ${17:0},}
+	    ${18:constraint = ${19:my_constraint_callable},}
+	    ${20:min = ${21:0},}
+	    ${22:max = ${23:1},}
+	    ${24:min_length = ${25:0},}
+	    ${26:max_length = ${27:0},}
+	    ${28:value_type = ${29:None},}
+	    ${30:unique = ${31:False}}
+	)
+
+# FieldsLines
+snippet atf FieldsLines
+	atapi.LinesField(
+	    '$1',
+	    required=${2:False},
+	    storage=atapi.AnnotationStorage(),
+	    widget=atapi.LinesWidget(
+	        label=_(u"$3"),
+	        description=_(u"$4")
+	    ),
+	),
+
+# Iterable
+snippet schema Iterable
+	schema.Iterable(
+	    __name__ = '$1',
+	    ${2:title = ${3:u'$4'},}
+	    ${5:description = ${6:u'$7'},}
+	    ${8:required = ${9:True},}
+	    ${10:readonly = ${11:False},}
+	    ${12:default = ${13:None},}
+	    ${14:missing_value = ${15:None},}
+	    ${16:order = ${17:0},}
+	    ${18:constraint = ${19:my_constraint_callable},}
+	    ${20:min = ${21:0},}
+	    ${22:max = ${23:1},}
+	    ${24:min_length = ${25:0},}
+	    ${26:max_length = ${27:0},}
+	    ${28:value_type = ${29:None},}
+	    ${30:unique = ${31:False}}
+	)
+
+# FieldsDateTime
+snippet atf FieldsDateTime
+	atapi.DateTimeField(
+	    '$1',
+	    required=${2:False},
+	    searchable=${3:False},
+	    default_method=DateTime,
+	    languageIndependent=True,
+	    storage=atapi.AnnotationStorage(),
+	    widget=atapi.CalendarWidget(
+	        label=_(u"$4"),
+	        description=_(u"$5")
+	    ),
+	),
+
+# FieldsRichText
+snippet atf FieldsRichText
+	atapi.TextField(
+	    '$1',
+	    required=${2:False},
+	    searchable=${3:True},
+	    primary=${4:True},
+	    default_output_type='text/x-html-safe',
+	    storage=atapi.AnnotationStorage(),
+	    widget=atapi.RichWidget(
+	        label=_(u"$5"),
+	        description=_(u"$6")
+	    ),
+	),
+
+# InterfaceField
+snippet schema InterfaceField
+	schema.InterfaceField(
+	    __name__ = '$1',
+	    ${2:title = ${3:u'$4'},}
+	    ${5:description = ${6:u'$7'},}
+	    ${8:required = ${9:True},}
+	    ${10:readonly = ${11:False},}
+	    ${12:default = ${13:None},}
+	    ${14:missing_value = ${15:None},}
+	    ${16:order = ${17:0},}
+	    ${18:constraint = ${19:my_constraint_callable},}
+	    ${20:min = ${21:0},}
+	    ${22:max = ${23:1},}
+	    ${24:min_length = ${25:0},}
+	    ${26:max_length = ${27:0},}
+	    ${28:value_type = ${29:None},}
+	    ${30:unique = ${31:False}}
+	)
+
+# ipdbset_trace
+snippet ipdb ipdbset_trace
+	import ipdb; ipdb.set_trace()$0
+
+# Id
+snippet schema Id
+	schema.Id(
+	    __name__ = '$1',
+	    ${2:title = ${3:u'$4'},}
+	    ${5:description = ${6:u'$7'},}
+	    ${8:required = ${9:True},}
+	    ${10:readonly = ${11:False},}
+	    ${12:default = ${13:None},}
+	    ${14:missing_value = ${15:None},}
+	    ${16:order = ${17:0},}
+	    ${18:constraint = ${19:my_constraint_callable},}
+	    ${20:min = ${21:0},}
+	    ${22:max = ${23:1},}
+	    ${24:min_length = ${25:0},}
+	    ${26:max_length = ${27:0},}
+	    ${28:value_type = ${29:None},}
+	    ${30:unique = ${31:False}}
+	)
+
+# Fields
+snippet schema Fields
+	Fields(
+	    $1
+	)
+
+# registerGenericSetupprofile
+snippet registerProfile registerGenericSetupprofile
+	<genericsetup:registerProfile
+	    name="$1"
+	    title="$2"
+	    directory="profiles/$1"
+	    description="$3"
+	    provides="Products.GenericSetup.interfaces.EXTENSION"
+	    />
+
+# Date
+snippet schema Date
+	schema.Date(
+	    __name__ = '$1',
+	    ${2:title = ${3:u'$4'},}
+	    ${5:description = ${6:u'$7'},}
+	    ${8:required = ${9:True},}
+	    ${10:readonly = ${11:False},}
+	    ${12:default = ${13:None},}
+	    ${14:missing_value = ${15:None},}
+	    ${16:order = ${17:0},}
+	    ${18:constraint = ${19:my_constraint_callable},}
+	    ${20:min = ${21:0},}
+	    ${22:max = ${23:1},}
+	    ${24:min_length = ${25:0},}
+	    ${26:max_length = ${27:0},}
+	    ${28:value_type = ${29:None},}
+	    ${30:unique = ${31:False}}
+	)
+
+# Adapts
+snippet ada Adapts
+	adapts($1)
+
+# Int
+snippet schema Int
+	schema.Int(
+	    __name__ = '$1',
+	    ${2:title = ${3:u'$4'},}
+	    ${5:description = ${6:u'$7'},}
+	    ${8:required = ${9:True},}
+	    ${10:readonly = ${11:False},}
+	    ${12:default = ${13:None},}
+	    ${14:missing_value = ${15:None},}
+	    ${16:order = ${17:0},}
+	    ${18:constraint = ${19:my_constraint_callable},}
+	    ${20:min = ${21:0},}
+	    ${22:max = ${23:1},}
+	    ${24:min_length = ${25:0},}
+	    ${26:max_length = ${27:0},}
+	    ${28:value_type = ${29:None},}
+	    ${30:unique = ${31:False}}
+	)
+
+# PuDBset_trace
+snippet pudb PuDBset_trace
+	import pudb; pudb.set_trace()$0
+
+# Action
+snippet @act Action
+	@action('$1'${2:,validator=$3})
+	def ${4:action_method}(${5:self,} action, data):
+	     ${6:pass}
+
+# DottedName
+snippet schema DottedName
+	schema.DottedName(
+	    __name__ = '$1',
+	    ${2:title = ${3:u'$4'},}
+	    ${5:description = ${6:u'$7'},}
+	    ${8:required = ${9:True},}
+	    ${10:readonly = ${11:False},}
+	    ${12:default = ${13:None},}
+	    ${14:missing_value = ${15:None},}
+	    ${16:order = ${17:0},}
+	    ${18:constraint = ${19:my_constraint_callable},}
+	    ${20:min = ${21:0},}
+	    ${22:max = ${23:1},}
+	    ${24:min_length = ${25:0},}
+	    ${26:max_length = ${27:0},}
+	    ${28:value_type = ${29:None},}
+	    ${30:unique = ${31:False}}
+	)
+
+# Implements
+snippet impl Implements
+	implements(${1:Interface})
+	
+
+# Field
+snippet schema Field
 	schema.Field(
-	    __name__ = '$1',
-	    ${2:title = ${3:u'$4'},}
-	    ${5:description = ${6:u'$7'},}
-	    ${8:required = ${9:True},}
-	    ${10:readonly = ${11:False},}
-	    ${12:default = ${13:None},}
-	    ${14:missing_value = ${15:None},}
-	    ${16:order = ${17:0},}
-	    ${18:constraint = ${19:my_constraint_callable},}
-	    ${20:min = ${21:0},}
-	    ${22:max = ${23:1},}
-	    ${24:min_length = ${25:0},}
-	    ${26:max_length = ${27:0},}
-	    ${28:value_type = ${29:None},}
-	    ${30:unique = ${31:False}}
-	)
-
-# Schema: Bytes
-snippet schema Schema: Bytes
-	schema.Bytes(
-	    __name__ = '$1',
-	    ${2:title = ${3:u'$4'},}
-	    ${5:description = ${6:u'$7'},}
-	    ${8:required = ${9:True},}
-	    ${10:readonly = ${11:False},}
-	    ${12:default = ${13:None},}
-	    ${14:missing_value = ${15:None},}
-	    ${16:order = ${17:0},}
-	    ${18:constraint = ${19:my_constraint_callable},}
-	    ${20:min = ${21:0},}
-	    ${22:max = ${23:1},}
-	    ${24:min_length = ${25:0},}
-	    ${26:max_length = ${27:0},}
-	    ${28:value_type = ${29:None},}
-	    ${30:unique = ${31:False}}
-	)
-
-# Schema: BytesLine
-snippet schema Schema: BytesLine
-	schema.BytesLine(
 	    __name__ = '$1',
 	    ${2:title = ${3:u'$4'},}
 	    ${5:description = ${6:u'$7'},}

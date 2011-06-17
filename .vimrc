@@ -125,6 +125,11 @@ autocmd BufReadPost *
       \     endif |
       \ endif
 
+map <c-Down> <c-w>j
+map <c-Up> <c-w>k
+map <c-Right> <c-w>l
+map <c-Left> <c-w>h
+
 """ Taken from https://dev.launchpad.net/UltimateVimPythonSetup
 if !exists("autocommands_loaded")
   let autocommands_loaded = 1
