@@ -10,7 +10,6 @@ set showcmd
 set hidden
 set wildmenu
 set wildmode=full
-set ttyfast
 set modeline                " Allow vim options to be embedded in files;
 set modelines=5             " they must be within the first or last 5 lines.
 set ffs=unix,dos,mac        " Try recognizing dos, unix, and mac line endings.
@@ -21,8 +20,6 @@ filetype plugin indent on
 
 set title
 set t_Co=256
-set history=1000
-set enc=utf-8
 colorscheme zenburn
 
 syntax on
@@ -49,9 +46,9 @@ if has("gui_running")
 endif
 
 " show a line at column 79
-if exists("&colorcolumn")
-    set colorcolumn=79
-endif
+"if exists("&colorcolumn")
+"    set colorcolumn=79
+"endif
 
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
@@ -112,6 +109,13 @@ vnoremap <F1> <ESC>
 nnoremap <F1> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 
+" Reselect visual block after in/dedent so we can in/dedent more
+vnoremap < <gv
+vnoremap > >gv
+
+" To get rid of ^M characters as a result of DOS line endings
+" command Crlf :%s/^M//g
+
 augroup resCur
 autocmd!
 autocmd BufWinEnter * call ResCur()
@@ -125,10 +129,18 @@ autocmd BufReadPost *
       \     endif |
       \ endif
 
-map <c-Down> <c-w>j
-map <c-Up> <c-w>k
-map <c-Right> <c-w>l
-map <c-Left> <c-w>h
+noremap <C-Down>  <C-W>j
+noremap <C-Up>    <C-W>k
+noremap <C-Left>  <C-W>h
+noremap <C-Right> <C-W>l
+
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-H> <C-W>h
+noremap <C-L> <C-W>l
+
+highlight OverLength ctermbg=110000 ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
 
 """ Taken from https://dev.launchpad.net/UltimateVimPythonSetup
 if !exists("autocommands_loaded")
