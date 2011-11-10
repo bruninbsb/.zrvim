@@ -1,0 +1,53 @@
+# python-zope snippets for snipMate.
+# Created by zedr 2011
+
+# Testing Layer
+snippet testinglayer TestingLayer
+	from  plone.app.testing import PloneSandboxLayer
+	from  plone.app.testing import applyProfile
+	from  plone.app.testing import PLONE_FIXTURE
+	from  plone.app.testing import IntegrationTesting
+	from zope.configuration import xmlconfig
+
+	class ${1:ClassName}(PloneSandboxLayer):
+
+		 defaultBases = (PLONE_FIXTURE,)
+
+		 def setUpZope(self, app, configurationContext):
+			 # Load ZCML
+			 import ${2:module}
+			 xmlconfig.file('configure.zcml',
+					 $2
+					 context=configurationContext
+			 )
+
+		 def setUpPloneSite(self, portal):
+			applyProfile(portal, '$2:default')
+			$1_FIXTURE = $1()
+			$1_INTEGRATION_TESTING = IntegrationTesting(
+			bases=($1_FIXTURE,),
+			name="$1:Integration",
+			)
+
+snippet tests Tests
+	import unittest2 as unittest
+
+	import transaction
+
+	from plone.app.testing import setRoles
+	from plone.app.testing import TEST_USER_ID
+	from plone.testing.z2 import Browser
+
+	from Products.CMFCore.utils import getToolByName
+
+	from ${1:module}.testing import ${2:object}_INTEGRATION_TESTING
+
+	class TestSetup(unittest.TestCase):
+
+		layer = $2_INTEGRATION_TESTING
+
+		def test__verify_installation(self):
+			"""Check if installed"""
+			portal = self.layer['portal']
+			tool = getToolByName(portal, 'portal_quickinstaller')
+			self.assertTrue(tool.isProductInstalled('$1'))

@@ -87,3 +87,22 @@ snippet ifmain
 # __magic__
 snippet _
 	__${1:init}__${2}
+
+snippet unittest
+	import unittest
+	import ${1}
+
+	class TestSeq(unittest.TestCase):
+
+		def test_foo(self):
+			self.assertTrue(False)
+
+	def runtests():
+		""" 
+		Run my tests.
+		"""
+
+		unittest.main()
+
+	if __name__ == "__main__":
+		runtests()
