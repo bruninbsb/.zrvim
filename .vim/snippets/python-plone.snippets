@@ -3,31 +3,39 @@
 
 # Testing Layer
 snippet testinglayer TestingLayer
-	from  plone.app.testing import PloneSandboxLayer
-	from  plone.app.testing import applyProfile
-	from  plone.app.testing import PLONE_FIXTURE
-	from  plone.app.testing import IntegrationTesting
+	from plone.app.testing import PloneSandboxLayer
+	from plone.app.testing import applyProfile
+	from plone.app.testing import PLONE_FIXTURE
+	from plone.app.testing import IntegrationTesting
+	
+	from plone.testing import z2
+
 	from zope.configuration import xmlconfig
 
 	class ${1:ClassName}(PloneSandboxLayer):
 
-		 defaultBases = (PLONE_FIXTURE,)
+		defaultBases = (PLONE_FIXTURE,)
 
-		 def setUpZope(self, app, configurationContext):
-			 # Load ZCML
-			 import ${2:module}
-			 xmlconfig.file('configure.zcml',
-					 $2
-					 context=configurationContext
-			 )
-
-		 def setUpPloneSite(self, portal):
-			applyProfile(portal, '$2:default')
-			$1_FIXTURE = $1()
-			$1_INTEGRATION_TESTING = IntegrationTesting(
-			bases=($1_FIXTURE,),
-			name="$1:Integration",
+		def setUpZope(self, app, configurationContext):
+			# Load ZCML
+			import ${2:module}
+			xmlconfig.file('configure.zcml',
+				 $2,
+				 context=configurationContext,
 			)
+
+		def setUpPloneSite(self, portal):
+			applyProfile(portal, '$2:default')
+
+		def tearDownZope(self, app):
+			z2.uninstallProduct(app, '$2')
+
+
+	$1_FIXTURE = $1()
+	$1_INTEGRATION_TESTING = IntegrationTesting(
+		bases=($1_FIXTURE,),
+		name="$1:Integration",
+	)
 
 snippet tests Tests
 	import unittest2 as unittest
