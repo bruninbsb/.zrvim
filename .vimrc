@@ -135,3 +135,5 @@ if !exists("autocommands_loaded")
   let autocommands_loaded = 1
   autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python
 endif
+
+""" Date: :r !date --rfc-3339=s
