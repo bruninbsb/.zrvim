@@ -68,7 +68,7 @@ snippet controlpanelview ControlPanelView
 	from plone.app.registry.browser.controlpanel import RegistryEditForm
 	from plone.app.registry.browser.controlpanel import ControlPanelFormWrapper
 
-	from ${1:module}.${2:namespace}.interfaces import I${3:MySettings}
+	from ${1:module}.${2:namespace}.browser.interfaces import I${3:MySettings}
 	from $1.$2 import ${4:My}MessageFactory as _
 
 	class ${5:MyVeryOwn}ControlPanelForm(RegistryEditForm):
