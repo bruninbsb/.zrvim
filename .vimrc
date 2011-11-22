@@ -34,9 +34,9 @@ set showmatch
 set matchtime=2
 set textwidth=79
 set formatoptions=qrn1
-if has("mouse")
-    set mouse=a
-endif
+"if has("mouse")
+"    set mouse=a
+"endif
 
 if has("gui_running")
     set guioptions-=m       " remove menu bar
@@ -147,3 +147,5 @@ if !exists("autocommands_loaded")
   let autocommands_loaded = 1
   autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python
 endif
+
+""" Date: :r !date --rfc-3339=s
