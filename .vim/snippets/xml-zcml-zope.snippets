@@ -5,7 +5,8 @@
 snippet <configure configure
 	<configure
 	    xmlns:${1:zope}="http://namespaces.zope.org/zope"
-	    xmlns:${2:browser}="http://namespaces.zope.org/browser">
+	    xmlns:${2:browser}="http://namespaces.zope.org/browser"
+		>
 	  ${3}
 	</configure>
 	
@@ -175,6 +176,14 @@ snippet <viewlet Viewlet
 	    ${12:permission="${13}"}
 	    />
 
+snippet <page browserPage
+	<browser:page
+		for="plone.app.layout.navigation.interfaces.INavigationRoot"
+		name="${1:my-view-name}"
+		class=".controlpanel.${2:MyOwn}View"
+		permission="cmf.ManagePortal"
+		/>
+	
 # role
 snippet <role role
 	<${1}zope:role
@@ -186,15 +195,40 @@ snippet <role role
 snippet <implements Implements
 	<$1implements interface="$2"/>
 
-# page
-snippet < page
-	<${1}page
-	    ${2:for="${3}"}
-	    ${4:class="${5}"}
-	    ${6:layer="${7}"}
-	    permission="${8}"
-	    ${9:allowed_interface="${10}"}
-	    ${11:allowed_attributes="${12}"}
-	    />
-	
+snippet <includeDep IncludeDependencies
+	<includeDependencies package="." />
 
+snippet <static plonestatic
+	<plone:static
+		directory="${1:directory}"
+		type="theme"
+		/>
+
+snippet <resourceDir resourceDirectory
+	<browser:resourceDirectory
+		directory="${1:directory}"
+		name="${2:name}"
+		/>
+
+snippet <registerProfile registerProfile
+	<genericsetup:registerProfile
+		name="${1:default}"
+		title="${2:My Cool Product}"
+		directory="profiles/$1"
+		description="${4:Installs My Cool Product}"
+		provides="Products.GenericSetup.interfaces.EXTENSION"
+		/>
+		
+snippet <controlpanel
+	<configlet
+		title="${1:MyOwn} settings"
+		action_id="${2:action_id}"
+		appId="$2"
+		category="Products"
+		condition_expr=""
+		url_expr="string:${portal_url}/@@$2-controlpanel"
+		icon_expr="string:$portal_url/++resource++${3:user}.gif"
+		visible="True"
+		i18n:attributes="title">
+			<permission>Manage portal</permission>
+	</configlet>
