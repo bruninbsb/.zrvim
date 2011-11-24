@@ -29,9 +29,9 @@ snippet testinglayer TestingLayer
 			z2.uninstallProduct(app, '$2')
 
 
-	$1_FIXTURE = $1()
-	$1_INTEGRATION_TESTING = IntegrationTesting(
-		bases=($1_FIXTURE,),
+	${3:MYMODULE}_FIXTURE = $1()
+	$3_INTEGRATION_TESTING = IntegrationTesting(
+		bases=($3_FIXTURE,),
 		name="$1:Integration",
 	)
 
