@@ -82,6 +82,12 @@ nmap <silent> <F3> :NERDTreeToggle<CR>
 cmap W w
 cmap Q q
 
+" easier navigation between split windows
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+
 " Execute file being edited with <Shift> + e:
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
 autocmd BufWritePre *.py normal m`:%s/\s\+$//e ``
