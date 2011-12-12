@@ -71,7 +71,13 @@ autocmd BufRead *.py set go+=b
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
 let g:pydiction_location = '$HOME/.vim/after/ftplugin/pydiction/complete-dict'
-let mapleader = ","
+" use comma as <Leader> key instead of backslash
+let mapleader=","
+
+" double percentage sign in command mode is expanded
+" to directory of current file - http://vimcasts.org/e/14
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
+
 nmap <silent> <F3> :NERDTreeToggle<CR>
 cmap W w
 cmap Q q
