@@ -56,7 +56,6 @@ autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
 let g:pydiction_location = '$HOME/.vim/after/ftplugin/pydiction/complete-dict'
 let mapleader = ","
-nmap <silent> <F3> :NERDTreeToggle<CR>
 cmap W w
 cmap Q q
 
@@ -111,3 +110,4 @@ if !exists("autocommands_loaded")
   let autocommands_loaded = 1
   autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python
 endif
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so
