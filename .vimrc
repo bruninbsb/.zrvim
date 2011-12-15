@@ -1,3 +1,7 @@
+""" No vi
+set nocompatible
+set ttyfast
+
 """ Encoding
 set history=1000            " Keep a very long command-line history.
 set encoding=utf-8
@@ -6,7 +10,6 @@ set showcmd
 set hidden
 set wildmenu
 set wildmode=full
-set ttyfast
 set modeline                " Allow vim options to be embedded in files;
 set modelines=5             " they must be within the first or last 5 lines.
 set ffs=unix,dos,mac        " Try recognizing dos, unix, and mac line endings.
@@ -17,8 +20,6 @@ filetype plugin indent on
 
 set title
 set t_Co=256
-set history=1000
-set enc=utf-8
 colorscheme zenburn
 
 syntax on
@@ -33,6 +34,21 @@ set showmatch
 set matchtime=2
 set textwidth=79
 set formatoptions=qrn1
+"if has("mouse")
+"    set mouse=a
+"endif
+
+if has("gui_running")
+    set guioptions-=m       " remove menu bar
+    set guioptions-=T       " remove toolbar
+    set guioptions-=r       " remove right-hand scroll bar
+    set t_Co=256
+endif
+
+" show a line at column 79
+"if exists("&colorcolumn")
+"    set colorcolumn=79
+"endif
 
 nnoremap <F2> :set nonumber!<CR>:set foldcolumn=0<CR>
 
@@ -55,9 +71,20 @@ autocmd BufRead *.py set go+=b
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
 let g:pydiction_location = '$HOME/.vim/after/ftplugin/pydiction/complete-dict'
-let mapleader = ","
+" use comma as <Leader> key instead of backslash
+let mapleader=","
+
+" double percentage sign in command mode is expanded
+" to directory of current file - http://vimcasts.org/e/14
+cnoremap %% <C-R>=expand('%:h').'/'<cr>
 cmap W w
 cmap Q q
+
+" easier navigation between split windows
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
 
 " Execute file being edited with <Shift> + e:
 map <buffer> <S-e> :w<CR>:!/usr/bin/env python % <CR>
@@ -92,6 +119,13 @@ vnoremap <F1> <ESC>
 nnoremap <F1> :set invpaste paste?<CR>
 set pastetoggle=<F2>
 
+" Reselect visual block after in/dedent so we can in/dedent more
+vnoremap < <gv
+vnoremap > >gv
+
+" To get rid of ^M characters as a result of DOS line endings
+" command Crlf :%s/^M//g
+
 augroup resCur
 autocmd!
 autocmd BufWinEnter * call ResCur()
@@ -105,9 +139,24 @@ autocmd BufReadPost *
       \     endif |
       \ endif
 
+noremap <C-Down>  <C-W>j
+noremap <C-Up>    <C-W>k
+noremap <C-Left>  <C-W>h
+noremap <C-Right> <C-W>l
+
+noremap <C-J> <C-W>j
+noremap <C-K> <C-W>k
+noremap <C-H> <C-W>h
+noremap <C-L> <C-W>l
+
+highlight OverLength ctermbg=110000 ctermfg=white guibg=#592929
+match OverLength /\%81v.\+/
+
 """ Taken from https://dev.launchpad.net/UltimateVimPythonSetup
 if !exists("autocommands_loaded")
   let autocommands_loaded = 1
   autocmd BufRead,BufNewFile,FileReadPost *.py source ~/.vim/python
 endif
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*.so
+
+""" Date: :r !date --rfc-3339=s
